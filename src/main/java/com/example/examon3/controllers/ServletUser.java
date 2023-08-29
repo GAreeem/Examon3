@@ -51,15 +51,19 @@ public class ServletUser extends HttpServlet {
                 redirect = "/views/admin/index.jsp";
                 break;
             case "/user/instructor":
-                HttpSession session = req.getSession();
-                Usuario user = (Usuario) session.getAttribute("user");
+                HttpSession session2 = req.getSession();
+                Usuario user = (Usuario) session2.getAttribute("user");
                 List<Clase> clases1 = new DaoClase().findAllClases(user.getUsuarioID());
                 req.setAttribute("clases", clases1);
                 redirect = "/views/instructor/index.jsp";
                 break;
             case "/user/usuario":
+                HttpSession session3 = req.getSession();
+                Usuario user3 = (Usuario) session3.getAttribute("user");
                 List<Clase> clases3 = new DaoClase().findAllClasesA();
                 req.setAttribute("clases", clases3);
+                List<Clase> clases4 = new DaoClase().findAllClasesRegistradas(user3.getUsuarioID());
+                req.setAttribute("clases2", clases4);
                 redirect = "/views/usuario/index.jsp";
                 break;
             case "/user/vista-crear-instructor":
@@ -73,6 +77,18 @@ public class ServletUser extends HttpServlet {
             case "/user/vista-registrar":
                 redirect = "/views/usuario/registrarse.jsp";
                 break;
+            case "/user/cerrar-sesion":
+                try {
+                    HttpSession session = req.getSession(false);
+                    if (session != null) {
+                        session.invalidate();
+                    }
+                    redirect = "/user/inicio?result=true&message=" + URLEncoder
+                            .encode("Sesión cerrada correctamente", StandardCharsets.UTF_8);
+                } catch (Exception e) {
+                    redirect = "/user/inicio?result=false&message=" + URLEncoder
+                            .encode("Error al cerrar sesión", StandardCharsets.UTF_8);
+                }
             default:
                 System.out.println(action);
                 break;

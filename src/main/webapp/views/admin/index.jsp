@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Admin</h1>
+<h2><a href="/user/cerrar-sesion"><h2>Cerrar Sesion</h2></a></h2>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <a href="/user/vista-crear-instructor" class="card-link">Registrar Instructor</a>

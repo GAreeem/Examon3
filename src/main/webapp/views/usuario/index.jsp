@@ -1,9 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
+    <jsp:include page="../../layouts/head.jsp"/>
 </head>
 <body>
+<br><br>
+<h2><a href="/user/cerrar-sesion"><h2>Cerrar Sesion</h2></a></h2>
+<br>
 <div class="col-10">
     <div class="card">
         <div class="card-header" >
@@ -46,5 +52,10 @@
         </table>
     </div>
 </div>
+<h1>Clases Registradas</h1>
+<c:forEach var="clase2" items="${clases2}" varStatus="b">
+     <h2>${b.count}>.<c:out value="${clase2.nombreClase}"/></h2>
+</c:forEach>
+<jsp:include page="/layouts/footer.jsp"/>
 </body>
 </html>

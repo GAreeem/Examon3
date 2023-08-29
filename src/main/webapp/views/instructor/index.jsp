@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>Instructor</h1>
+<h2><a href="/user/cerrar-sesion"><h2>Cerrar Sesion</h2></a></h2>
 <div class="col-10">
     <div class="card">
         <div class="card-header" >

@@ -1,0 +1,43 @@
+create database emi;
+use emi;
+
+-- Tabla Usuarios
+CREATE TABLE Usuarios (
+    UsuarioID INT PRIMARY KEY auto_increment, -- no
+    Nombre VARCHAR(50),
+    Apellidos VARCHAR(50),
+    Curp VARCHAR(18),
+    FechaNacimiento DATE,  -- no
+    Correo VARCHAR(100),
+    Contraseña VARCHAR(100),
+    Estado VARCHAR(20), -- no
+    Rol varchar(20) -- no
+);
+
+-- Tabla Clases
+CREATE TABLE Clases (
+    ClaseID INT PRIMARY KEY auto_increment,
+    Nombre VARCHAR(100),
+    Descripcion TEXT,
+    Estado VARCHAR(20),
+    InstructorID INT REFERENCES Usuarios(UsuarioID)
+);
+
+-- Tabla Temarios
+CREATE TABLE Temarios (
+    TemarioID INT PRIMARY KEY auto_increment,
+    ClaseID INT REFERENCES Clases(ClaseID),
+    Contenido varchar(255)
+);
+
+-- Tabla Inscripciones
+CREATE TABLE Inscripciones (
+    InscripcionID INT PRIMARY KEY auto_increment,
+    UsuarioID INT REFERENCES Usuarios(UsuarioID),
+    ClaseID INT REFERENCES Clases(ClaseID)
+);
+
+INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('2', 'emi', 'emi', 'na', sysdate(), 'emi@a', 'emi', 'Activo', 'INSTRUCTOR_ROLE');
+INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('3', 'juan', 'juan', 'na', sysdate(), 'juan@a', 'juan', 'Activo', 'USER_ROLE');
+INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('1', 'admin', 'admin', 'na', sysdate(), 'admin@a', 'admin', 'Activo', 'ADMIN_ROLE');
+

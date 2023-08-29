@@ -142,14 +142,9 @@ public class DaoClase {
     }
 
     public boolean registrarse(Long idClase, Long usuarioID) {
-        /*
-        InscripcionID INT PRIMARY KEY auto_increment,
-        UsuarioID INT REFERENCES Usuarios(UsuarioID),
-        ClaseID INT REFERENCES Clases(ClaseID)
-        */
         try {
             conn = new MySQLConnection().connect();
-            String query = "INSERT INTO usuarios VALUES (0,?,?);";
+            String query = "INSERT INTO inscripciones VALUES (0,?,?);";
             pstm = conn.prepareStatement(query);
             pstm.setLong(1,usuarioID);
             pstm.setLong(2,idClase);
@@ -160,5 +155,29 @@ public class DaoClase {
             close();
         }
         return false;
+    }
+
+    public List<Clase> findAllClasesRegistradas(Long usuarioID) {
+        List<Clase> clases = new ArrayList<>();
+        try {
+            conn = new MySQLConnection().connect();
+            String query = "SELECT C.Nombre AS NombreClase FROM Usuarios U " +
+                    "JOIN Inscripciones I ON U.UsuarioID = I.UsuarioID " +
+                    "JOIN Clases C ON I.ClaseID = C.ClaseID " +
+                    "WHERE U.UsuarioID = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1,usuarioID);
+            rs = pstm.executeQuery();
+            while (rs.next()){
+                Clase clase = new Clase();
+                clase.setNombreClase(rs.getString("NombreClase"));
+                clases.add(clase);
+            }
+        }catch (SQLException e){
+            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, "Error findAll"+e.getMessage());
+        }finally {
+            close();
+        }
+        return clases;
     }
 }
