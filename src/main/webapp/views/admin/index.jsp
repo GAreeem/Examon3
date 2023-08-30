@@ -6,7 +6,7 @@
     <title>Title</title>
   <jsp:include page="../../layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 <h1>Admin</h1>
 <h2><a href="/user/cerrar-sesion"><h2>Cerrar Sesion</h2></a></h2>
 <div class="card" style="width: 18rem;">
@@ -71,7 +71,7 @@
     <div class="card">
         <div class="card-header" >
             <div class="row">
-                <div class="col" >Listado de usuarios</div>
+                <div class="col" >Listado de clases</div>
             </div>
         </div>
         <table class="table table-stripped" id="clasesTable">

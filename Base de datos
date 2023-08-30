@@ -37,7 +37,8 @@ CREATE TABLE Inscripciones (
     ClaseID INT REFERENCES Clases(ClaseID)
 );
 
-INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('2', 'emi', 'emi', 'na', sysdate(), 'emi@a', 'emi', 'Activo', 'INSTRUCTOR_ROLE');
-INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('3', 'juan', 'juan', 'na', sysdate(), 'juan@a', 'juan', 'Activo', 'USER_ROLE');
-INSERT INTO `emi`.`usuarios` (`UsuarioID`, `Nombre`, `Apellidos`, `Curp`, `FechaNacimiento`, `Correo`, `Contraseña`, `Estado`, `Rol`) VALUES ('1', 'admin', 'admin', 'na', sysdate(), 'admin@a', 'admin', 'Activo', 'ADMIN_ROLE');
+INSERT INTO usuarios VALUES ('2', 'emi', 'emi', 'na', sysdate(), 'emi@gmail', 'emi', 'Activo', 'INSTRUCTOR_ROLE');
+INSERT INTO usuarios VALUES ('3', 'juan', 'juan', 'na', sysdate(), 'juan@gmail', 'juan', 'Activo', 'USER_ROLE');
+INSERT INTO usuarios VALUES ('1', 'admin', 'admin', 'na', sysdate(), 'admin@gmail', 'admin', 'Activo', 'ADMIN_ROLE');
 
+INSERT INTO clases VALUES ('3C', 'grupo', 'Activo', '2');

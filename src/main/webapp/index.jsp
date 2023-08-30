@@ -7,7 +7,7 @@
     <title>Examon3</title>
     <jsp:include page="/layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 
 <div class="container  mt-5 centrado align-items-stretch">
     <div class="col-4">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </form>
-                <a href="/user/vista-registrar"><h2>Registrarse</h2></a>
+                <a href="/user/vista-registrar"><h5>Registrarse</h5></a>
             </div>
         </div>
     </div>

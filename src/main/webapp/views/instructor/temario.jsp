@@ -7,7 +7,7 @@
     <title>Title</title>
     <jsp:include page="../../layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 <h1>Actualizar Temario</h1>
 <form  class="needs-validation" action="${pageContext.request.contextPath}/clase/actualizar-temario" novalidate method="post">
     <div class="form-floating">

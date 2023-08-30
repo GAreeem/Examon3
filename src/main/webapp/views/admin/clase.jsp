@@ -8,7 +8,7 @@
     <title>Crear Clase</title>
     <jsp:include page="../../layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 <h1>Crear Clase</h1>
 <form  class="needs-validation" action="${pageContext.request.contextPath}/user/registrar-clase" novalidate method="post">
     <div class="mb-3">
@@ -16,7 +16,7 @@
         <input type="text" class="form-control" id="nombreClase" name="nombreClase">
     </div>
     <div class="mb-3">
-        <label for="descripcion" class="form-label">apellidos</label>
+        <label for="descripcion" class="form-label">descripcion</label>
         <input type="text" class="form-control" id="descripcion" name="descripcion">
     </div>
 

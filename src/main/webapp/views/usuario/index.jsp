@@ -54,7 +54,7 @@
 </div>
 <h1>Clases Registradas</h1>
 <c:forEach var="clase2" items="${clases2}" varStatus="b">
-     <h2>${b.count}>.<c:out value="${clase2.nombreClase}"/></h2>
+     <h2>${b.count}><c:out value="${clase2.nombreClase}"/></h2>
 </c:forEach>
 <jsp:include page="/layouts/footer.jsp"/>
 </body>

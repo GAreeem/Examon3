@@ -151,7 +151,7 @@ public class ServletUser extends HttpServlet {
                 }
                 break;
             case "/user/registrar-clase":
-                nombre = req.getParameter("nombre");
+                nombre = req.getParameter("nombreClase");
                 descripcion = req.getParameter("descripcion");
                 estado = "Activo";
                 instructorID = Long.valueOf(req.getParameter("instructorID"));

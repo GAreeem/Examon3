@@ -5,7 +5,7 @@
     <title>Crear Instructor</title>
     <jsp:include page="../../layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 <h1>Crear instructor</h1>
 <form  class="needs-validation" action="${pageContext.request.contextPath}/user/registrar-instructor" novalidate method="post">
     <div class="mb-3">

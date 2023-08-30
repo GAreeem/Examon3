@@ -21,6 +21,8 @@ public class RequestFilter implements Filter{
         whiteList.add("/user/inicio");
         whiteList.add("/index.jsp");
         whiteList.add("/user/inciar-sesion");
+        whiteList.add("/user/vista-registrar");
+        whiteList.add("/user/registrar");
         whiteList.add("http://localhost:8080/path/to/bootstrap.min.css");
         whiteList.add("/assets/css/bootstrap.min.css");
         whiteList.add("/assets/css/sweetalert2.min.css");

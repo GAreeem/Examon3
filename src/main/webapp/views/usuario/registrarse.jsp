@@ -5,7 +5,7 @@
   <title>Examon3</title>
   <jsp:include page="/layouts/head.jsp"/>
 </head>
-<body>
+<body style="background-color: #9de0f6">
 <div class="container  mt-5 centrado align-items-stretch">
   <div class="col-4">
     <div class="card">
